@@ -61,6 +61,7 @@ a:focus-visible, button:focus-visible {
 }
 
 .site-header .wrap {
+  max-width: 1180px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -105,7 +106,7 @@ a:focus-visible, button:focus-visible {
   right: -40px;
   width: 640px;
   height: 640px;
-  opacity: 0.6;
+  opacity: 0.45;
   z-index: 0;
   pointer-events: none;
 }
@@ -113,35 +114,36 @@ a:focus-visible, button:focus-visible {
 .hero-bg-icon {
   position: absolute;
   z-index: 0;
-  opacity: 0.5;
+  opacity: 0.4;
   pointer-events: none;
+  filter: grayscale(100%);
 }
 
 .hero-bg-microscope {
-  width: 300px;
+  width: 250px;
   height: auto;
-  top: 0px;
-  right: 30px;
+  top: 6px;
+  right: 60px;
 }
 
 .hero-bg-dna {
-  width: 210px;
+  width: 190px;
   height: auto;
-  bottom: -20px;
-  right: 10px;
-  opacity: 0.4;
+  bottom: 0px;
+  right: 30px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .hero-bg-icon { display: none; }
 }
 
 .hero-grid {
   position: relative;
   z-index: 1;
+  max-width: 1180px;
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 44px;
+  grid-template-columns: 260px 1fr;
+  gap: 48px;
   align-items: start;
 }
 
@@ -173,21 +175,53 @@ a:focus-visible, button:focus-visible {
 
 .icon-dna-small {
   position: absolute;
-  top: -20px;
-  right: -18px;
-  width: 42px;
+  top: -18px;
+  right: -16px;
+  width: 38px;
   height: auto;
 }
 
 .icon-accent {
   display: block;
-  opacity: 0.92;
+  opacity: 0.9;
 }
 
 .icon-bacteria-side {
-  width: 190px;
-  height: auto;
-  margin: 22px 0 0 -34px;
+  display: none;
+}
+
+.hero-bacteria-cluster {
+  position: relative;
+  margin: 40px 0 0 -30px;
+  height: 220px;
+  pointer-events: none;
+}
+
+.hero-bacteria-cluster img {
+  position: absolute;
+  opacity: 0.5;
+  filter: grayscale(100%);
+}
+
+.bacteria-1 {
+  width: 130px;
+  top: 0;
+  left: 6px;
+  transform: rotate(-4deg);
+}
+
+.bacteria-2 {
+  width: 78px;
+  top: 96px;
+  left: 0px;
+  transform: rotate(10deg);
+}
+
+.bacteria-3 {
+  width: 110px;
+  top: 140px;
+  left: 78px;
+  transform: rotate(-6deg) scaleX(-1);
 }
 
 @media (max-width: 640px) {
@@ -195,10 +229,10 @@ a:focus-visible, button:focus-visible {
     grid-template-columns: 1fr;
   }
   .hero-photo-col {
-    width: 170px;
+    width: 220px;
     margin: 0 auto 8px;
   }
-  .icon-bacteria-side { display: none; }
+  .hero-bacteria-cluster { display: none; }
 }
 
 .eyebrow {
@@ -224,10 +258,16 @@ a:focus-visible, button:focus-visible {
 .hero h1 {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: clamp(38px, 6vw, 58px);
-  line-height: 1.08;
+  font-size: clamp(32px, 4.4vw, 52px);
+  line-height: 1.12;
   margin: 0 0 20px;
   color: var(--forest-deep);
+  white-space: nowrap;
+}
+
+.hero h1 em {
+  display: block;
+  white-space: normal;
 }
 
 .hero h1 em {
@@ -453,6 +493,10 @@ section.block:last-of-type { border-bottom: none; }
 /* ============================================
    Responsive
    ============================================ */
+@media (max-width: 480px) {
+  .hero h1 { white-space: normal; font-size: clamp(28px, 8vw, 38px); }
+}
+
 @media (max-width: 560px) {
   .hero { padding: 56px 0 44px; }
   .hero-veins { width: 300px; height: 300px; top: -20px; right: -100px; }
