@@ -1,0 +1,25 @@
+title: Dinuk S. Jayarathna
+description: "Biotechnology Undergraduate — SLIIT. Notes on microbiology, molecular biology, and life at a scale most people miss."
+author: Dinuk S. Jayarathna
+email: your.email@example.com
+
+markdown: kramdown
+permalink: /field-notes/:title/
+
+collections:
+  posts:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+exclude:
+  - README.md

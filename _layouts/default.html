@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+<meta name="description" content="{{ page.excerpt | default: site.description | strip_html | truncate: 160 }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="mark" href="{{ '/' | relative_url }}">Dinuk S. Jayarathna</a>
+    <nav>
+      <a href="{{ '/' | relative_url }}#about">About</a>
+      <a href="{{ '/' | relative_url }}#notes">Field Notes</a>
+      <a href="{{ '/' | relative_url }}#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+{{ content }}
+</main>
+
+<footer class="site-footer" id="contact">
+  <div class="wrap">
+    <p>BSc (Hons) Biotechnology — Sri Lanka Institute of Information Technology</p>
+    <div class="links">
+      <a href="https://linkedin.com/in/YOUR-LINKEDIN">LinkedIn</a>
+      <a href="https://instagram.com/dinuk_s_jayarathna">Instagram</a>
+      <a href="https://orcid.org/YOUR-ORCID-ID">ORCID</a>
+      <a href="mailto:your.email@example.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

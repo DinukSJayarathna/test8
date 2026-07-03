@@ -1,0 +1,102 @@
+---
+layout: default
+title: Home
+---
+
+<section class="hero">
+  <svg class="hero-veins" viewBox="0 0 460 460" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- leaf / branch vein motif -->
+    <g fill="none" stroke="#52795F" stroke-width="1">
+      <path d="M170 40 C 190 120, 150 160, 180 240 C 200 300, 160 340, 175 380"/>
+      <path d="M175 90 C 210 100, 230 130, 260 135"/>
+      <path d="M168 150 C 130 165, 100 160, 70 180"/>
+      <path d="M182 210 C 220 220, 240 250, 275 260"/>
+      <path d="M170 270 C 135 285, 115 310, 85 325"/>
+      <path d="M173 330 C 205 335, 225 355, 250 365"/>
+      <circle cx="170" cy="40" r="3" fill="#B07A2E" stroke="none"/>
+      <circle cx="260" cy="135" r="2.5" fill="#B07A2E" stroke="none"/>
+      <circle cx="70" cy="180" r="2.5" fill="#B07A2E" stroke="none"/>
+      <circle cx="275" cy="260" r="2.5" fill="#B07A2E" stroke="none"/>
+      <circle cx="85" cy="325" r="2.5" fill="#B07A2E" stroke="none"/>
+      <circle cx="175" cy="380" r="3" fill="#B07A2E" stroke="none"/>
+    </g>
+  </svg>
+
+  <img class="hero-bg-icon hero-bg-microscope" src="{{ '/assets/img/microscope-tint.png' | relative_url }}" alt="">
+  <img class="hero-bg-icon hero-bg-dna" src="{{ '/assets/img/dna-tint.png' | relative_url }}" alt="">
+
+  <div class="wrap hero-grid">
+    <div class="hero-photo-col">
+      <div class="specimen-photo">
+        <img src="{{ '/assets/img/profile.jpg' | relative_url }}" alt="Portrait of Dinuk S. Jayarathna">
+
+        <svg class="icon-dna-small" viewBox="0 0 40 70" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <g fill="none" stroke="#1F4436" stroke-width="1.4" stroke-linecap="round">
+            <path d="M20 3 C 33 12, 33 23, 20 32 C 7 41, 7 52, 20 61 C 26 65, 29 67, 31 68"/>
+            <path d="M20 3 C 7 12, 7 23, 20 32 C 33 41, 33 52, 20 61 C 14 65, 11 67, 9 68"/>
+            <line x1="9" y1="10" x2="31" y2="10"/>
+            <line x1="6" y1="17" x2="34" y2="17"/>
+            <line x1="9" y1="25" x2="31" y2="25"/>
+            <line x1="9" y1="39" x2="31" y2="39"/>
+            <line x1="6" y1="47" x2="34" y2="47"/>
+            <line x1="9" y1="55" x2="31" y2="55"/>
+          </g>
+        </svg>
+      </div>
+      <img class="icon-accent icon-bacteria-side" src="{{ '/assets/img/bacteria.png' | relative_url }}" alt="">
+    </div>
+
+    <div class="hero-content">
+      <p class="eyebrow">Field Notes in Biotechnology</p>
+      <h1>Dinuk S. Jayarathna<br><em>life at a scale most people miss.</em></h1>
+      <p class="lede">Biotechnology undergraduate at SLIIT, working toward a career in microbiology, molecular biology, and research. This is where I write down what I'm learning — in the lab, in coursework, and behind a macro lens.</p>
+      <div class="links">
+        <a href="https://linkedin.com/in/YOUR-LINKEDIN">LinkedIn ↗</a>
+        <a href="https://orcid.org/YOUR-ORCID-ID">ORCID ↗</a>
+        <a href="https://instagram.com/dinuk_s_jayarathna">Instagram ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="about">
+  <div class="wrap">
+    <h2 class="section-title">About</h2>
+    <div class="specimen" data-catalog="Specimen No. 001">
+      <h3>Undergraduate Researcher-in-Training</h3>
+      <p>I'm a BSc (Hons) Biotechnology student at the Sri Lanka Institute of Information Technology (SLIIT), currently building a foundation across biochemistry, molecular biology, microbiology, genetics, and cell culture. I'm most drawn to the molecular and microbial side of biology — how cells work, how genetic mechanisms can be studied and manipulated, and what that reveals about biological systems more broadly.</p>
+      <p>Outside coursework, I explore the same instinct for close observation through macro photography — documenting the small-scale detail of plant and insect life that's easy to walk past.</p>
+      <div class="fields">
+        <div class="field"><b>Institution</b>SLIIT, Sri Lanka</div>
+        <div class="field"><b>Programme</b>BSc (Hons) Biotechnology</div>
+        <div class="field"><b>Focus</b>Microbiology · Molecular Biology</div>
+        <div class="field"><b>Based in</b>Sri Lanka</div>
+      </div>
+    </div>
+
+    <div class="tag-row">
+      <span class="tag">Molecular Biology</span>
+      <span class="tag">Microbiology</span>
+      <span class="tag">Genetics</span>
+      <span class="tag">Cell Culture</span>
+      <span class="tag">Biochemistry</span>
+      <span class="tag">Research Methods</span>
+      <span class="tag">Macro Photography</span>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="notes">
+  <div class="wrap">
+    <h2 class="section-title">Field Notes</h2>
+    {% for post in site.posts %}
+    <a class="note-card" href="{{ post.url | relative_url }}">
+      <div class="note-meta">{{ post.date | date: "%d %B %Y" }}{% if post.category %} · {{ post.category }}{% endif %}</div>
+      <h3>{{ post.title }}</h3>
+      <p>{{ post.excerpt | strip_html | truncate: 140 }}</p>
+    </a>
+    {% else %}
+    <p>Posts in progress — check back soon.</p>
+    {% endfor %}
+  </div>
+</section>
